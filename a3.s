@@ -1,7 +1,7 @@
 .global _start
 _start:
     MOV R0, #5
-    MOV R1, #5
+    MOV R1, #9
     MOV R5, #15
 
     CMP R0, R1 //compare if R0 is greater than R1
