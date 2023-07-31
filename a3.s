@@ -10,22 +10,19 @@ _start:
     BEQ equal // Both numbers are equal
 
     greater:
-    LSL R5, #2 //Logical Shift Left two positions
-    //SEQUENCE TO TERMINATE THE PROGRAM
-    MOV R0, R5
-    MOV R7, #1
-    SWI 0
+        LSL R5, #2 //Logical Shift Left two positions
+        B end //call the sequence to terminate the program
 
     lesser:
-    LSR R5, #1 //Logical Shift Right two positions
-    //SEQUENCE TO TERMINATE THE PROGRAM
-    MOV R0, R5
-    MOV R7, #1
-    SWI 0
+        LSR R5, #1 //Logical Shift Right two positions
+        B end //call the sequence to terminate the program
 
     equal:
-    ROR R5, #1 //Rotate one position
-    //SEQUENCE TO TERMINATE THE PROGRAM
-    MOV R0, R5
-    MOV R7, #1
-    SWI 0
+        ROR R5, #1 //Rotate one position
+        B end //call the sequence to terminate the program
+
+    end:
+        //SEQUENCE TO TERMINATE THE PROGRAM
+        MOV R0, R5
+        MOV R7, #1
+        SWI 0
